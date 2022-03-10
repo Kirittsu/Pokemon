@@ -8,7 +8,7 @@ namespace Pokémon
 {
     class Pokémon
     {
-        //variable
+        //private variable
         private int hp;
         private int attackBase;
         private int defenseBase;
@@ -16,6 +16,7 @@ namespace Pokémon
         private int specialDefenseBase;
         private int speedBase;
         private int level;
+        private string[] type = {null, null};
 
         //properties
         public int HP_Base
@@ -66,7 +67,11 @@ namespace Pokémon
         }
 
         public string Naam { get; set; }
-        public string Type { get; set; }
+        public string[] Type 
+        {
+            get { return type; } 
+            set { type = value; } 
+        }
         public int Id{ get; set; }
         public int Number { get; set; }
 
