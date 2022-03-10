@@ -68,6 +68,7 @@ namespace Pokémon
         public string Naam { get; set; }
         public string Type { get; set; }
         public int Id{ get; set; }
+        public int Number { get; set; }
 
         public int HP_Full
         {
