@@ -9,7 +9,8 @@ namespace Pokémon
     {
         static void Main(string[] args)
         {
-            JObject ob1 = JObject.Parse(File.ReadAllText(Directory.GetCurrentDirectory() + "/../../../pokemon.json"));
+            JArray ob1 = JArray.Parse(File.ReadAllText(Directory.GetCurrentDirectory() + "/../../../pokemon.json"));
+            Newtonsoft.Json.Linq.JToken victreebell = new Newtonsoft.Json.Linq.JObject();
         }
     }
 }
