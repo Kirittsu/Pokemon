@@ -16,7 +16,9 @@ namespace Pokémon
             }           
             
             JObject Ivysaur = pkmnlist[1].ToObject<JObject>();
-            Console.WriteLine(Ivysaur);
+            String name = "$.name";
+
+            Console.WriteLine(Ivysaur.SelectToken(name));
         }
     }
 }
