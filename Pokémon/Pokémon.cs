@@ -67,7 +67,7 @@ namespace Pokémon
 
         public string Naam { get; set; }
         public string Type { get; set; }
-        public int PokédexNR { get; set; }
+        public int Id{ get; set; }
 
         public int HP_Full
         {
@@ -98,12 +98,6 @@ namespace Pokémon
         public int Speed_Full
         {
             get { return ((Speed_Base * Level) / 50) + 5; }
-        }
-
-        //methodes
-        public void VerhoogLevel()
-        {
-            level++;
         }
     }
 }

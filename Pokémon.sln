@@ -5,6 +5,11 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokémon", "Pokémon\Pokémon.csproj", "{442D869A-C87A-4883-9BC8-F427BD42890D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DD6B1E43-03E1-4487-86A8-D25B3B126313}"
+	ProjectSection(SolutionItems) = preProject
+		Pokémon\pokemon.json = Pokémon\pokemon.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

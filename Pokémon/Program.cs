@@ -1,5 +1,7 @@
 ﻿using System;
-using System.Text.Json.Serialization;
+using System.IO;
+using Newtonsoft.Json.Linq;
+
 
 namespace Pokémon
 {
@@ -7,7 +9,7 @@ namespace Pokémon
     {
         static void Main(string[] args)
         {
-            var list = JsonConverter;
+            JObject ob1 = JObject.Parse(File.ReadAllText(Directory.GetCurrentDirectory() + "/../../../pokemon.json"));
         }
     }
 }
