@@ -16,7 +16,7 @@ namespace Pokémon
         {
             //Json configuration
             JArray pkmnlist = JArray.Parse(File.ReadAllText(Directory.GetCurrentDirectory() + "/../../../pokemon.json"));
-            String name = "$.name";
+            string name = "$.name";
             string hp = "$.hp";
             string attack = "$.attack";
             string defense = "$.defense";
@@ -33,23 +33,8 @@ namespace Pokémon
             for (int i = 0; i < pkmnlist.Count; i++)
             {
                 JObject pkmnStats = pkmnlist[i].ToObject<JObject>();
-                string convertedName = Convert.ToString(pkmnStats.SelectToken(name));
-
-                PkmnDic.Add(convertedName, new Pokémon());
-
-                PkmnDic[convertedName].Naam = convertedName;
-                PkmnDic[convertedName].HP_Base = Convert.ToInt16(pkmnStats.SelectToken(hp));
-                PkmnDic[convertedName].Attack_Base = Convert.ToInt16(pkmnStats.SelectToken(attack));
-                PkmnDic[convertedName].Defense_Base = Convert.ToInt16(pkmnStats.SelectToken(defense));
-                PkmnDic[convertedName].SpecialAttack_Base = Convert.ToInt16(pkmnStats.SelectToken(spAttack));
-                PkmnDic[convertedName].SpecialDefense_Base = Convert.ToInt16(pkmnStats.SelectToken(spDefense));
-                PkmnDic[convertedName].Speed_Base = Convert.ToInt16(pkmnStats.SelectToken(speed));
-                PkmnDic[convertedName].Id = Convert.ToInt16(pkmnStats.SelectToken(id));
-                PkmnDic[convertedName].Number = Convert.ToInt16(pkmnStats.SelectToken(number));
-                PkmnDic[convertedName].Type[0] = Convert.ToString(pkmnStats.SelectToken(type[0]));
-                PkmnDic[convertedName].Type[1] = Convert.ToString(pkmnStats.SelectToken(type[1])); //"" if no second type
+                PkmnDic.Add(Convert.ToString(pkmnStats.SelectToken(name)), new Pokémon(Convert.ToString(pkmnStats.SelectToken(name)), Convert.ToInt16(pkmnStats.SelectToken(hp)), Convert.ToInt16(pkmnStats.SelectToken(attack)), Convert.ToInt16(pkmnStats.SelectToken(defense)), Convert.ToInt16(pkmnStats.SelectToken(spAttack)), Convert.ToInt16(pkmnStats.SelectToken(spDefense)), Convert.ToInt16(pkmnStats.SelectToken(speed)), Convert.ToInt16(pkmnStats.SelectToken(id)), Convert.ToInt16(pkmnStats.SelectToken(number)), Convert.ToString(pkmnStats.SelectToken(type[0])), Convert.ToString(pkmnStats.SelectToken(type[1]))));
             }
-
 
             //easier pokemon access
             Pokémon callPkmn(pkmn name)
@@ -57,7 +42,6 @@ namespace Pokémon
                 return PkmnDic[Convert.ToString(name).ToLower()];
             }
 
-            
             Console.WriteLine(callPkmn(pkmn.Bulbasaur).Naam);
             Console.WriteLine(callPkmn(pkmn.Bulbasaur).Total);
         }

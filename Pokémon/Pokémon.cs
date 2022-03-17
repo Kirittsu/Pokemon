@@ -17,6 +17,28 @@ namespace Pokémon
         private int speedBase;
         private int level;
         private string[] type = {null, null};
+        private int id;
+        private string naam;
+        private int number;
+
+
+        //constructor
+        public Pokémon(string naamConstructor, int hpConstructor, int attackBaseConstructor, int defenseBaseConstructor, int specialAttackBaseConstructor, int specialDefenseBaseConstructor, int speedbaseConstructor, int idConstructor, int numberConstructor, string typeConstructor1, string typeConstructor2)
+        {
+            naam = naamConstructor;
+            hp = hpConstructor;
+            attackBase = attackBaseConstructor;     
+            defenseBase = defenseBaseConstructor;   
+            specialAttackBase = specialAttackBaseConstructor;
+            specialDefenseBase = specialDefenseBaseConstructor;
+            speedBase = speedbaseConstructor;
+            id = idConstructor;
+            number = numberConstructor;
+            type[0] = typeConstructor1;
+            type[1] = typeConstructor2; //"" if no second type*/
+        }
+
+
 
         //properties
         public int HP_Base
@@ -66,14 +88,31 @@ namespace Pokémon
             get { return HP_Base + Attack_Base + Defense_Base + SpecialAttack_Base + SpecialDefense_Base + Speed_Base; }
         }
 
-        public string Naam { get; set; }
+        
         public string[] Type 
         {
             get { return type; } 
             set { type = value; } 
         }
-        public int Id{ get; set; }
-        public int Number { get; set; }
+
+
+        public string Naam
+        {
+            get { return naam; }
+            set { naam = value; }
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        public int Number
+        {
+            get { return number; }
+            set { number = value; }
+        }
 
         public int HP_Full
         {
