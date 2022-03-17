@@ -95,44 +95,52 @@ namespace Pokémon
             get { return type; } 
             set { type = value; } 
         }
+
+
         public string Naam
         {
             get { return naam; }
             set { naam = value; }
         }
+
         public int Id
         {
             get { return id; }
             set { id = value; }
         }
+
         public int Number
         {
             get { return number; }
             set { number = value; }
         }
 
-
         public int HP_Full
         {
             get { return (((HP_Base + 50) * Level) / 50) + 10; }
         }
+
         public int Attack_Full
         {
             get { return ((Attack_Base * Level) / 50) + 5; }
         }
+
         public int Defense_Full
         {
             get { return ((Defense_Base * Level) / 50) + 5; }
 
         }
+
         public int SpecialAttack_Full
         {
             get { return ((SpecialAttack_Base * Level) / 50) + 5; }
         }
+
         public int SpecialDefense_Full
         {
             get { return ((SpecialDefense_Base * Level) / 50) + 5; }
         }
+
         public int Speed_Full
         {
             get { return ((Speed_Base * Level) / 50) + 5; }
