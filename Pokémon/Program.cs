@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using Newtonsoft.Json.Linq;
-
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,8 +41,7 @@ namespace Pokémon
                 return PkmnDic[Convert.ToString(name).ToLower()];
             }
 
-            Console.WriteLine(callPkmn(pkmn.Bulbasaur).Naam);
-            Console.WriteLine(callPkmn(pkmn.Bulbasaur).Total);
+            Console.WriteLine(Pokémon.Battle(callPkmn(pkmn.Bidoof), callPkmn(pkmn.Arceus)));
         }
     }
 }
