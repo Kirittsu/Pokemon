@@ -22,6 +22,27 @@ namespace Pokémon
         private string naam = "";
         private int number = 0;
 
+        private double[,] typeEffectiveness =
+        {
+                {1,1,1,1,1,1,1,1,1,1,1,1,0.5,0,1,1,0.5,1},
+                {1,0.5,0.5,1,2,2,1,1,1,1,1,2,0.5,1,0.5,1,2,1},
+                {1,2,0.5,1,0.5,1,1,1,2,1,1,1,2,1,0.5,1,1,1},
+                {1,1,2,0.5,0.5,1,1,1,0,2,1,1,1,1,0.5,1,1,1},
+                {1,0.5,2,1,0.5,1,1,0.5,2,0.5,1,0.5,2,1,0.5,1,0.5,1},
+                {1,0.5,0.5,1,2,0.5,1,1,2,2,1,1,1,1,2,1,0.5,1},
+                {2,1,1,1,1,2,1,0.5,1,0.5,0.5,0.5,2,0,1,2,2,0.5},
+                {1,1,1,1,2,1,1,0.5,0.5,1,1,1,0.5,0.5,1,1,0,2},
+                {1,2,1,2,0.5,1,1,2,1,0,1,0.5,2,1,1,1,2,1},
+                {1,1,1,0.5,2,1,2,1,1,1,1,2,0.5,1,1,1,0.5,1},
+                {1,1,1,1,1,1,2,2,1,1,0.5,1,1,1,1,0,0.5,1},
+                {1,0.5,1,1,2,1,0.5,0.5,1,0.5,2,1,1,0.5,1,2,0.5,0.5},
+                {1,2,1,1,1,2,0.5,1,0.5,2,1,2,1,1,1,1,0.5,1},
+                {0,1,1,1,1,1,1,1,1,1,2,1,1,2,1,0.5,1,1},
+                {1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,0.5,0},
+                {1,1,1,1,1,1,0.5,1,1,1,2,1,1,2,1,0.5,1,0.5},
+                {1,0.5,0.5,0.5,1,2,1,1,1,1,1,1,2,1,1,1,0.5,2},
+                {1,0.5,1,1,1,1,2,0.5,1,1,1,1,1,1,2,2,0.5,1}
+        };
 
         //constructor
         public Pokémon(string naamConstructor, int hpConstructor, int attackBaseConstructor, int defenseBaseConstructor, int specialAttackBaseConstructor, int specialDefenseBaseConstructor, int speedbaseConstructor, int idConstructor, int numberConstructor, string typeConstructor1, string typeConstructor2)
@@ -195,6 +216,79 @@ namespace Pokémon
             
             else
                 return pkmn2.Naam;
+        }
+
+        static public double CheckEffectivity(string typeATK, string typeDEF)
+        {
+            int typeATKIndex = ConvertTypeToIndexNumber(typeATK);
+            int typeDEFIndex = ConvertTypeToIndexNumber(typeDEF);
+
+            return 1.0; //placeholder
+        }
+
+        static public int ConvertTypeToIndexNumber(string type)
+        {
+            switch(type)
+            {
+                case "normal":
+                    return 0;
+                    break;
+                case "fire":
+                    return 1;
+                    break;
+                case "water":
+                    return 2;
+                    break;
+                case "electric":
+                    return 3;
+                    break;
+                case "grass":
+                    return 4;
+                    break;
+                case "ice":
+                    return 5;
+                    break;
+                case "fighting":
+                    return 6;
+                    break;
+                case "poison":
+                    return 7;
+                    break;
+                case "ground":
+                    return 8;
+                    break;
+                case "flying":
+                    return 9;
+                    break;
+                case "psychic":
+                    return 10;
+                    break;
+                case "bug":
+                    return 11;
+                    break;
+                case "rock":
+                    return 12;
+                    break;
+                case "ghost":
+                    return 13;
+                    break;
+                case "dragon":
+                    return 14;
+                    break;
+                case "dark":
+                    return 15;
+                    break;
+                case "steel":
+                    return 16;
+                    break;
+                case "fairy":
+                    return 17;
+                    break;
+                default:
+                    return -1;
+                    Console.WriteLine("Incorrect typing given");
+                    break;
+            }
         }
     }
 }

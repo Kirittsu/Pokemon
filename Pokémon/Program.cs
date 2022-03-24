@@ -27,6 +27,8 @@ namespace Pokémon
             string[] type = { "$.types[0]", "$.types[1]" };
 
 
+
+
             //make pokemon dictionary
             Dictionary<string, Pokémon> Pokedex = new Dictionary<string, Pokémon>();
             for (int i = 0; i < pkmnlist.Count; i++)
