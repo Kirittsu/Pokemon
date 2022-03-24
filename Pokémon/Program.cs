@@ -28,17 +28,17 @@ namespace Pokémon
 
 
             //make pokemon dictionary
-            Dictionary<string, Pokémon> PkmnDic = new Dictionary<string, Pokémon>();
+            Dictionary<string, Pokémon> Pokedex = new Dictionary<string, Pokémon>();
             for (int i = 0; i < pkmnlist.Count; i++)
             {
                 JObject pkmnStats = pkmnlist[i].ToObject<JObject>();
-                PkmnDic.Add(Convert.ToString(pkmnStats.SelectToken(name)), new Pokémon(Convert.ToString(pkmnStats.SelectToken(name)), Convert.ToInt16(pkmnStats.SelectToken(hp)), Convert.ToInt16(pkmnStats.SelectToken(attack)), Convert.ToInt16(pkmnStats.SelectToken(defense)), Convert.ToInt16(pkmnStats.SelectToken(spAttack)), Convert.ToInt16(pkmnStats.SelectToken(spDefense)), Convert.ToInt16(pkmnStats.SelectToken(speed)), Convert.ToInt16(pkmnStats.SelectToken(id)), Convert.ToInt16(pkmnStats.SelectToken(number)), Convert.ToString(pkmnStats.SelectToken(type[0])), Convert.ToString(pkmnStats.SelectToken(type[1]))));
+                Pokedex.Add(Convert.ToString(pkmnStats.SelectToken(name)), new Pokémon(Convert.ToString(pkmnStats.SelectToken(name)), Convert.ToInt16(pkmnStats.SelectToken(hp)), Convert.ToInt16(pkmnStats.SelectToken(attack)), Convert.ToInt16(pkmnStats.SelectToken(defense)), Convert.ToInt16(pkmnStats.SelectToken(spAttack)), Convert.ToInt16(pkmnStats.SelectToken(spDefense)), Convert.ToInt16(pkmnStats.SelectToken(speed)), Convert.ToInt16(pkmnStats.SelectToken(id)), Convert.ToInt16(pkmnStats.SelectToken(number)), Convert.ToString(pkmnStats.SelectToken(type[0])), Convert.ToString(pkmnStats.SelectToken(type[1]))));
             }
 
             //easier pokemon access
             Pokémon callPkmn(pkmn name)
             {
-                return PkmnDic[Convert.ToString(name).ToLower()];
+                return Pokedex[Convert.ToString(name).ToLower()];
             }
 
             Console.WriteLine(Pokémon.Battle(callPkmn(pkmn.Bidoof), callPkmn(pkmn.Arceus)));
