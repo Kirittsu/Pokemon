@@ -16,7 +16,7 @@ namespace Pokémon
         private int specialAttackBase = 0;
         private int specialDefenseBase = 0;
         private int speedBase = 0;
-        private int level = 50;
+        private int level;
         private string[] type = {null, null};
         private int id = 0;
         private string naam = "";
@@ -160,8 +160,10 @@ namespace Pokémon
         }
 
         //Methods
-        static public object Battle(Pokémon pkmn1, Pokémon pkmn2)
+        static public object Battle(Pokémon pkmn1, Pokémon pkmn2, int askedLevel = 50, int askedLevel2 = 50)
         {
+            pkmn1.Level = askedLevel;
+            pkmn2.Level = askedLevel2;
             int currentPkmn = 0;
             int attack1 = 0;
             int attack2 = 0;
@@ -216,6 +218,26 @@ namespace Pokémon
             
             else
                 return pkmn2.Naam;
+        }
+
+        static public void ShowInfo(Pokémon pkmn, int askedLevel = 50)
+        {
+            pkmn.Level = askedLevel;
+
+            Console.WriteLine($"Naam: {pkmn.Naam}" +
+                              $"\nId: {pkmn.Number}" +
+                              $"\nLevel: {pkmn.Level}" +
+                              $"\nHP: {pkmn.HP_Full}" +
+                              $"\nAtk: {pkmn.Attack_Full}" +
+                              $"\nDef: {pkmn.Defense_Full}" +
+                              $"\nSpAtk: {pkmn.SpecialAttack_Full}" +
+                              $"\nSpDef: {pkmn.SpecialDefense_Full}" +
+                              $"\nSpd: {pkmn.Speed_Full}");
+            if (pkmn.Type[1] != "")
+                Console.WriteLine($"Type: {pkmn.Type[0]}, {pkmn.Type[1]}");
+            else
+                Console.WriteLine($"Type: {pkmn.Type[0]}");
+
         }
 
         static public double CheckEffectivity(string typeATK, string typeDEF)
