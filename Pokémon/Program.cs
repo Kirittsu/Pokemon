@@ -50,6 +50,8 @@ namespace Pokémon
 
             Console.WriteLine( callPkmn(pkmn.Nidoran_F).Naam );
             Console.WriteLine(Pokémon.Battle(callPkmn(pkmn.Bidoof), callPkmn(pkmn.Arceus)));
+
+            Console.WriteLine(Pokémon.CheckEffectivity("fire","grass"));
         }
     }
 }
