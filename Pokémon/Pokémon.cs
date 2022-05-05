@@ -60,8 +60,6 @@ namespace Pokémon
             type[1] = typeConstructor2; //"" if no second type*/
         }
 
-
-
         //properties
         public int HP_Base
         {
@@ -238,6 +236,36 @@ namespace Pokémon
             else
                 Console.WriteLine($"Type: {pkmn.Type[0]}");
 
+        }
+
+        static public void CoverageCheck(Pokémon pkmn)
+        {
+            //Input explanation
+            Console.WriteLine("Coverage Checker:");
+            Console.WriteLine("Enter the typing of your moves (or type finish to stop adding types)");
+
+            string input = "";
+            while (input != "finish")
+            {
+                input = Console.ReadLine();
+            }
+        }
+
+        static public bool QuestionYN(string question)
+        {
+            while (true)
+            {
+                Console.WriteLine(question);
+                string answerTemp = Console.ReadLine().ToLower();
+                if (answerTemp == "y")
+                {
+                    return true;
+                }
+                else if (answerTemp == "n")
+                {
+                    return false;
+                }
+            }
         }
 
         static public double CheckEffectivity(string typeATK, string typeDEF)

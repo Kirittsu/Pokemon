@@ -28,7 +28,6 @@ namespace Pokémon
 
 
 
-
             //make pokemon dictionary
             Dictionary<string, Pokémon> Pokedex = new Dictionary<string, Pokémon>();
             for (int i = 0; i < pkmnlist.Count; i++)
@@ -52,6 +51,7 @@ namespace Pokémon
             Console.WriteLine(Pokémon.Battle(callPkmn(pkmn.Bidoof), callPkmn(pkmn.Arceus)));
 
             Console.WriteLine(Pokémon.CheckEffectivity("fire","grass"));
+            Pokémon.CoverageCheck( callPkmn(pkmn.Abomasnow));
         }
     }
 }
